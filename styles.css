@@ -1,42 +1,42 @@
 :root {
-    --font-family: Nunito, Arial, Helvetica, sans-serif;
+  --font-family: Nunito, Arial, Helvetica, sans-serif;
 }
 body {
-    font-family: var(--font-family);
-    font-weight: 450;
-    background: #f0f0f0;
+  font-family: var(--font-family);
+  font-weight: 450;
+  background: #f0f0f0;
+  overflow: hidden;
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.spacebar-div {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-.spacebar-div > p {
-    margin: auto;
+.spacebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #cat {
-    max-width: 500px;
-    max-height:500px;
+  max-height: 80vh;
+  max-width: 85%;
+  height: auto;
 }
 #spacebarButton {
-    width: 5rem;
-    font-family: var(--font-family);
-    background-color: aquamarine;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: 0.2s ease transform;
+  width: 5rem;
+  font-family: var(--font-family);
+  font-weight: bold;
+  background-color: aquamarine;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease transform;
 }
+
 #spacebarButton:active {
-    transform: translateY(3px);
+  transform: translateY(3px);
 }
