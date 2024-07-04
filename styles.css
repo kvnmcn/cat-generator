@@ -40,12 +40,3 @@ body {
 #spacebarButton:active {
     transform: translateY(3px);
 }
-
-#catFact {
-    position: absolute;
-    left: 50%;
-    bottom: 1rem;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 10;
-}
