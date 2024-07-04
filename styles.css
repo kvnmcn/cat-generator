@@ -14,15 +14,8 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.spacebar-div {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-.spacebar-div > p {
-    margin: auto;
+.center > p {
+    margin:auto;
 }
 
 #cat {
