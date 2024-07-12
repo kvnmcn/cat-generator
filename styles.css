@@ -26,6 +26,9 @@ body {
   max-height: 80vh;
   max-width: 85%;
   height: auto;
+  border-radius: .7rem;
+}
+
 }
 #spacebarButton {
   width: 5rem;
