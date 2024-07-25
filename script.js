@@ -14,9 +14,14 @@ function fetchCat() {
         .then(response => {
             if (!response.ok) {
                 if (response.status === 404) {
+                  displayErrorCat(404);
                   throw new Error('Data not found');
                 } else if (response.status === 500) {
+                  displayErrorCat(500);
                   throw new Error('Server error');
+                } else if (response.status === 504) {
+                  displayErrorCat(504);
+                  throw new Error('Gateway Timeout');
                 } else {
                   throw new Error('Network response was not ok');
                 }
@@ -27,12 +32,10 @@ function fetchCat() {
         .catch(error => console.error(error));
 }
 function renderImage(data) {
-    {
         const imageUrl = data._id;
         const image = document.getElementById('cat');
         image.src = `https://cataas.com/cat/${imageUrl}`;
         console.log(imageUrl);
-    }
 }
 function fetchCatFact() {
     fetch('https://meowfacts.herokuapp.com/')
@@ -54,4 +57,8 @@ function fetchCatFact() {
 function renderCatFact(data) {
     const fact = document.getElementById('catFact');
     fact.innerHTML = data.data;
+}
+function displayErrorCat(statusCode) {
+  const image = document.getElementById('cat');
+  image.src = `https://http.cat/${statusCode}`;
 }
