@@ -11,7 +11,18 @@ spacebar.addEventListener('click', function () {
 });
 function fetchCat() {
     fetch('https://cataas.com/cat?type=medium&json=true')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                if (response.status === 404) {
+                  throw new Error('Data not found');
+                } else if (response.status === 500) {
+                  throw new Error('Server error');
+                } else {
+                  throw new Error('Network response was not ok');
+                }
+              }
+            return response.json();
+        })
         .then(data => renderImage(data))
         .catch(error => console.error(error));
 }
@@ -25,7 +36,18 @@ function renderImage(data) {
 }
 function fetchCatFact() {
     fetch('https://meowfacts.herokuapp.com/')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            if (response.status === 404) {
+              throw new Error('Data not found');
+            } else if (response.status === 500) {
+              throw new Error('Server error');
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          }
+        return response.json();
+    })
     .then(data => renderCatFact(data))
     .catch(error => console.error(error));
 }
