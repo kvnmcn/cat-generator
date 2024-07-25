@@ -23,6 +23,7 @@ function fetchCat() {
                   displayErrorCat(504);
                   throw new Error('Gateway Timeout');
                 } else {
+                  displayErrorCat(404);
                   throw new Error('Network response was not ok');
                 }
               }
